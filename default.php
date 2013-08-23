@@ -180,88 +180,35 @@ if (!empty($this->item->pagination) AND $this->item->pagination AND !$this->item
 
 <p>
 <?php 
-	switch($params->get('footer')) {
 
-		case 0:
-		break;
-
-		case 1: 
-		$footer_modules = &JModuleHelper::getModules( 'dean_baker' );
-		foreach($footer_modules as $myFooter) {
-			echo JModuleHelper::renderModule( $myFooter );
-		}
-		break;
-
-		case 2:
-		$footer_modules = $JModuleHelper::getModules( 'mark_weisbrot' );
-		foreach ($footer_modules as $myFooter) {
-			echo JModuleHelper::renderModule( $myFooter );
-		}
-		break;
+	$cases = array(
 	
-                case 3:
-                $footer_modules = $JModuleHelper::getModules( 'john_schmitt' );
-                foreach ($footer_modules as $myFooter) {
-                        echo JModuleHelper::renderModule( $myFooter );
-                }
-		break;
-
-                case 4:
-                $footer_modules = $JModuleHelper::getModules( 'dan_beeton' );
-                foreach ($footer_modules as $myFooter) {
-                        echo JModuleHelper::renderModule( $myFooter );
-                }
-		break;
-
-                case 5:
-                $footer_modules = $JModuleHelper::getModules( 'jobs_footer' );
-                foreach ($footer_modules as $myFooter) {
-                        echo JModuleHelper::renderModule( $myFooter );
-                }
-		break;		
-
-                case 6:
-                $footer_modules = $JModuleHelper::getModules( 'gdp_footer' );
-                foreach ($footer_modules as $myFooter) {
-                        echo JModuleHelper::renderModule( $myFooter );
-                }
-		break;
-
-                case 7:
-                $footer_modules = $JModuleHelper::getModules( 'union_footer' );
-                foreach ($footer_modules as $myFooter) {
-                        echo JModuleHelper::renderModule( $myFooter );
-                }
-		break;
-
-                case 8:
-                $footer_modules = $JModuleHelper::getModules( 'prices_footer' );
-                foreach ($footer_modules as $myFooter) {
-                        echo JModuleHelper::renderModule( $myFooter );
-                }
-                break;
-
-                case 9:
-                $footer_modules = $JModuleHelper::getModules( 'housing_footer' );
-                foreach ($footer_modules as $myFooter) {
-                        echo JModuleHelper::renderModule( $myFooter );
-                }
-                break;
-
-                case 10:
-                $footer_modules = $JModuleHelper::getModules( 'latam_footer' );
-                foreach ($footer_modules as $myFooter) {
-                        echo JModuleHelper::renderModule( $myFooter );
-                }
-                break;
-
-                case 11:
-                $footer_modules = $JModuleHelper::getModules( 'appelbaum_footer' );
-                foreach ($footer_modules as $myFooter) {
-                        echo JModuleHelper::renderModule( $myFooter );
-                }
-                break;
-
+		1 => 'dean_baker',
+		2 => 'mark_weisbrot',
+		3 => 'john _schmitt',
+		4 => 'dan_beeton',
+		5 => 'jobs_footer',
+		6 => 'gdp_footer',
+		7 => 'union_footer',
+		8 => 'prices_footer',
+		9 => 'housing_footer',
+		10 => 'latam_footer',
+		11 => 'appelbaum_footer'
+	
+	)
+	
+	$case_param = $params->get('footer');
+	
+	if ($case_param > 0) {
+	
+		$footer_modules = &JModuleHelper::getModules( $cases[$case_param] );
+		
+		foreach($footer_modules as $myFooter) {
+		
+			echo JModuleHelper::renderModule( $myFooter );
+			
+		}
+	
 	}
 
     ?>
