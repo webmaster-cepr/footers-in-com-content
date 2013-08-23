@@ -18,6 +18,7 @@ WEBSITE
   
 ChangeLog
 
+ * switch statement rewritten to array with keys, reducing everything to one if statement.
     
 COPYING/LICENSE
 
