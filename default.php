@@ -195,7 +195,7 @@ if (!empty($this->item->pagination) AND $this->item->pagination AND !$this->item
 		10 => 'latam_footer',
 		11 => 'appelbaum_footer'
 	
-	)
+	);
 	
 	$case_param = $params->get('footer');
 	
