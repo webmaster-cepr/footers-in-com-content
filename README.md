@@ -26,4 +26,4 @@ COPYING/LICENSE
   
 BUGS
 
-  None at this time.
+  * A Joomla core update will override the article.xml file, which means the footer fields have to be added again.  
